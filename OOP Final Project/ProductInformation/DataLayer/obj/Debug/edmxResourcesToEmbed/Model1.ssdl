@@ -1,0 +1,620 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProductInformationModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Brands">
+    <Key>
+      <PropertyRef Name="BrandID" />
+    </Key>
+    <Property Name="BrandID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Brand" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Categories">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="CityID" />
+    </Key>
+    <Property Name="CityID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CityName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CountryID" Type="int" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="CountryID" />
+    </Key>
+    <Property Name="CountryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CountryName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="CreditCart">
+    <Key>
+      <PropertyRef Name="CreditCartID" />
+    </Key>
+    <Property Name="CreditCartID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CartOwner" Type="nvarchar" MaxLength="40" />
+    <Property Name="CardNumber" Type="nvarchar" MaxLength="20" />
+    <Property Name="Password" Type="nvarchar" MaxLength="30" />
+    <Property Name="Limit" Type="money" />
+    <Property Name="SecurityCode" Type="nvarchar" MaxLength="3" />
+    <Property Name="CustomerID" Type="int" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="50" />
+    <Property Name="LastName" Type="varchar" MaxLength="50" />
+    <Property Name="PhoneNumber" Type="varchar" MaxLength="15" />
+    <Property Name="Selected" Type="nvarchar" MaxLength="300" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="CountryID" Type="int" />
+    <Property Name="CityID" Type="int" />
+    <Property Name="Address" Type="nvarchar" MaxLength="300" />
+  </EntityType>
+  <EntityType Name="Employees">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="EmployeeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="50" />
+    <Property Name="LastName" Type="varchar" MaxLength="50" />
+    <Property Name="RoleOf" Type="varchar" MaxLength="50" />
+    <Property Name="PhoneNumber" Type="nvarchar" MaxLength="15" />
+    <Property Name="DateOfBirth" Type="datetime" />
+    <Property Name="DateOfStart" Type="datetime" />
+    <Property Name="Address" Type="nvarchar" MaxLength="100" />
+    <Property Name="Photo" Type="nvarchar" MaxLength="100" />
+    <Property Name="SupplierID" Type="int" />
+  </EntityType>
+  <EntityType Name="Models">
+    <Key>
+      <PropertyRef Name="ModelID" />
+    </Key>
+    <Property Name="ModelID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Model" Type="nvarchar" MaxLength="50" />
+    <Property Name="BrandID" Type="int" />
+  </EntityType>
+  <EntityType Name="MyCarts">
+    <Key>
+      <PropertyRef Name="MyCartID" />
+    </Key>
+    <Property Name="MyCartID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MyCart" Type="nvarchar" MaxLength="400" />
+    <Property Name="UnitPrice" Type="int" />
+    <Property Name="ProductID" Type="int" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="OrderID" Type="int" />
+  </EntityType>
+  <EntityType Name="Orders">
+    <Key>
+      <PropertyRef Name="OrderID" />
+    </Key>
+    <Property Name="OrderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="200" />
+    <Property Name="ProductCode" Type="int" />
+    <Property Name="CustomerID" Type="int" />
+    <Property Name="SupplierID" Type="int" />
+    <Property Name="CategoryID" Type="int" />
+    <Property Name="TypeID" Type="int" />
+    <Property Name="ProductID" Type="int" />
+    <Property Name="BrandID" Type="int" />
+    <Property Name="ModelID" Type="int" />
+    <Property Name="CountryID" Type="int" />
+    <Property Name="CityID" Type="int" />
+    <Property Name="ShipperID" Type="int" />
+  </EntityType>
+  <EntityType Name="Products">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductTypeID" Type="int" />
+    <Property Name="BrandID" Type="int" />
+    <Property Name="ModelID" Type="int" />
+    <Property Name="Price" Type="money" />
+    <Property Name="OutputYear" Type="varchar" MaxLength="4" />
+    <Property Name="Color" Type="varchar" MaxLength="20" />
+    <Property Name="Stock" Type="int" />
+    <Property Name="WarrantyPeriod" Type="varchar" MaxLength="6" />
+    <Property Name="CategoryID" Type="int" />
+    <Property Name="SupplierID" Type="int" />
+    <Property Name="Photo1" Type="nvarchar" MaxLength="100" />
+    <Property Name="Photo2" Type="nvarchar" MaxLength="100" />
+    <Property Name="Photo3" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="ProductTypes">
+    <Key>
+      <PropertyRef Name="TypeID" />
+    </Key>
+    <Property Name="TypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductType" Type="varchar" MaxLength="50" />
+    <Property Name="CategoryID" Type="int" />
+  </EntityType>
+  <EntityType Name="Shippers">
+    <Key>
+      <PropertyRef Name="ShipperID" />
+    </Key>
+    <Property Name="ShipperID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompanyPhoneNumber" Type="nvarchar" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="Suppliers">
+    <Key>
+      <PropertyRef Name="SupplierID" />
+    </Key>
+    <Property Name="SupplierID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyName" Type="varchar" MaxLength="50" />
+    <Property Name="PhoneNumber" Type="varchar" MaxLength="15" />
+    <Property Name="Address" Type="varchar" MaxLength="150" />
+    <Property Name="UserID" Type="int" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="50" />
+    <Property Name="LastName" Type="varchar" MaxLength="50" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="30" />
+    <Property Name="Password" Type="nvarchar" MaxLength="30" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="PhoneNumber" Type="varchar" MaxLength="15" />
+    <Property Name="Photo" Type="nvarchar" MaxLength="100" />
+    <Property Name="Gender" Type="varchar" MaxLength="5" />
+  </EntityType>
+  <Association Name="FK__City__CountryID__2F10007B">
+    <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+    <End Role="City" Type="Self.City" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CountryID" />
+      </Principal>
+      <Dependent Role="City">
+        <PropertyRef Name="CountryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CreditCar__Custo__38996AB5">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+    <End Role="CreditCart" Type="Self.CreditCart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="CreditCart">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Customer__Addres__32E0915F">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Customer">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Customer__CityID__34C8D9D1">
+    <End Role="City" Type="Self.City" Multiplicity="0..1" />
+    <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="CityID" />
+      </Principal>
+      <Dependent Role="Customer">
+        <PropertyRef Name="CityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Customer__Countr__33D4B598">
+    <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+    <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CountryID" />
+      </Principal>
+      <Dependent Role="Customer">
+        <PropertyRef Name="CountryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Employees__Suppl__3C69FB99">
+    <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="0..1" />
+    <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Suppliers">
+        <PropertyRef Name="SupplierID" />
+      </Principal>
+      <Dependent Role="Employees">
+        <PropertyRef Name="SupplierID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Models__BrandID__45F365D3">
+    <End Role="Brands" Type="Self.Brands" Multiplicity="0..1" />
+    <End Role="Models" Type="Self.Models" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Brands">
+        <PropertyRef Name="BrandID" />
+      </Principal>
+      <Dependent Role="Models">
+        <PropertyRef Name="BrandID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MyCarts__OrderID__5DCAEF64">
+    <End Role="Products" Type="Self.Products" Multiplicity="0..1" />
+    <End Role="MyCarts" Type="Self.MyCarts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="MyCarts">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MyCarts__OrderID__5FB337D6">
+    <End Role="Orders" Type="Self.Orders" Multiplicity="0..1" />
+    <End Role="MyCarts" Type="Self.MyCarts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Orders">
+        <PropertyRef Name="OrderID" />
+      </Principal>
+      <Dependent Role="MyCarts">
+        <PropertyRef Name="OrderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MyCarts__UserID__5EBF139D">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="MyCarts" Type="Self.MyCarts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="MyCarts">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Orders__BrandID__571DF1D5">
+    <End Role="Brands" Type="Self.Brands" Multiplicity="0..1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Brands">
+        <PropertyRef Name="BrandID" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="BrandID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Orders__Category__5535A963">
+    <End Role="Categories" Type="Self.Categories" Multiplicity="0..1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categories">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Orders__CityID__59FA5E80">
+    <End Role="City" Type="Self.City" Multiplicity="0..1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="CityID" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="CityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Orders__CountryI__59063A47">
+    <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CountryID" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="CountryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Orders__Customer__52593CB8">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Orders__ModelID__5812160E">
+    <End Role="Models" Type="Self.Models" Multiplicity="0..1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Models">
+        <PropertyRef Name="ModelID" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="ModelID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Orders__ProductI__5629CD9C">
+    <End Role="Products" Type="Self.Products" Multiplicity="0..1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Orders__ShipperI__5AEE82B9">
+    <End Role="Shippers" Type="Self.Shippers" Multiplicity="0..1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Shippers">
+        <PropertyRef Name="ShipperID" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="ShipperID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Orders__Supplier__534D60F1">
+    <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="0..1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Suppliers">
+        <PropertyRef Name="SupplierID" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="SupplierID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Orders__TypeID__5441852A">
+    <End Role="ProductTypes" Type="Self.ProductTypes" Multiplicity="0..1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductTypes">
+        <PropertyRef Name="TypeID" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="TypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Products__BrandI__49C3F6B7">
+    <End Role="Brands" Type="Self.Brands" Multiplicity="0..1" />
+    <End Role="Products" Type="Self.Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Brands">
+        <PropertyRef Name="BrandID" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="BrandID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Products__Catego__4BAC3F29">
+    <End Role="Categories" Type="Self.Categories" Multiplicity="0..1" />
+    <End Role="Products" Type="Self.Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categories">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Products__ModelI__4AB81AF0">
+    <End Role="Models" Type="Self.Models" Multiplicity="0..1" />
+    <End Role="Products" Type="Self.Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Models">
+        <PropertyRef Name="ModelID" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="ModelID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Products__Photo3__48CFD27E">
+    <End Role="ProductTypes" Type="Self.ProductTypes" Multiplicity="0..1" />
+    <End Role="Products" Type="Self.Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductTypes">
+        <PropertyRef Name="TypeID" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="ProductTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Products__Suppli__4CA06362">
+    <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="0..1" />
+    <End Role="Products" Type="Self.Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Suppliers">
+        <PropertyRef Name="SupplierID" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="SupplierID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ProductTy__Categ__412EB0B6">
+    <End Role="Categories" Type="Self.Categories" Multiplicity="0..1" />
+    <End Role="ProductTypes" Type="Self.ProductTypes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categories">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="ProductTypes">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Suppliers__UserI__2A4B4B5E">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Suppliers">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="SP_ModelByBrand" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_ProdStockByType" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="ProductInformationModelStoreContainer">
+    <EntitySet Name="Brands" EntityType="Self.Brands" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CreditCart" EntityType="Self.CreditCart" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Models" EntityType="Self.Models" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MyCarts" EntityType="Self.MyCarts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductTypes" EntityType="Self.ProductTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Shippers" EntityType="Self.Shippers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Suppliers" EntityType="Self.Suppliers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__City__CountryID__2F10007B" Association="Self.FK__City__CountryID__2F10007B">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="City" EntitySet="City" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CreditCar__Custo__38996AB5" Association="Self.FK__CreditCar__Custo__38996AB5">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="CreditCart" EntitySet="CreditCart" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Customer__Addres__32E0915F" Association="Self.FK__Customer__Addres__32E0915F">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Customer" EntitySet="Customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Customer__CityID__34C8D9D1" Association="Self.FK__Customer__CityID__34C8D9D1">
+      <End Role="City" EntitySet="City" />
+      <End Role="Customer" EntitySet="Customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Customer__Countr__33D4B598" Association="Self.FK__Customer__Countr__33D4B598">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="Customer" EntitySet="Customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Employees__Suppl__3C69FB99" Association="Self.FK__Employees__Suppl__3C69FB99">
+      <End Role="Suppliers" EntitySet="Suppliers" />
+      <End Role="Employees" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Models__BrandID__45F365D3" Association="Self.FK__Models__BrandID__45F365D3">
+      <End Role="Brands" EntitySet="Brands" />
+      <End Role="Models" EntitySet="Models" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MyCarts__OrderID__5DCAEF64" Association="Self.FK__MyCarts__OrderID__5DCAEF64">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="MyCarts" EntitySet="MyCarts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MyCarts__OrderID__5FB337D6" Association="Self.FK__MyCarts__OrderID__5FB337D6">
+      <End Role="Orders" EntitySet="Orders" />
+      <End Role="MyCarts" EntitySet="MyCarts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MyCarts__UserID__5EBF139D" Association="Self.FK__MyCarts__UserID__5EBF139D">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="MyCarts" EntitySet="MyCarts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Orders__BrandID__571DF1D5" Association="Self.FK__Orders__BrandID__571DF1D5">
+      <End Role="Brands" EntitySet="Brands" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Orders__Category__5535A963" Association="Self.FK__Orders__Category__5535A963">
+      <End Role="Categories" EntitySet="Categories" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Orders__CityID__59FA5E80" Association="Self.FK__Orders__CityID__59FA5E80">
+      <End Role="City" EntitySet="City" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Orders__CountryI__59063A47" Association="Self.FK__Orders__CountryI__59063A47">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Orders__Customer__52593CB8" Association="Self.FK__Orders__Customer__52593CB8">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Orders__ModelID__5812160E" Association="Self.FK__Orders__ModelID__5812160E">
+      <End Role="Models" EntitySet="Models" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Orders__ProductI__5629CD9C" Association="Self.FK__Orders__ProductI__5629CD9C">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Orders__ShipperI__5AEE82B9" Association="Self.FK__Orders__ShipperI__5AEE82B9">
+      <End Role="Shippers" EntitySet="Shippers" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Orders__Supplier__534D60F1" Association="Self.FK__Orders__Supplier__534D60F1">
+      <End Role="Suppliers" EntitySet="Suppliers" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Orders__TypeID__5441852A" Association="Self.FK__Orders__TypeID__5441852A">
+      <End Role="ProductTypes" EntitySet="ProductTypes" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Products__BrandI__49C3F6B7" Association="Self.FK__Products__BrandI__49C3F6B7">
+      <End Role="Brands" EntitySet="Brands" />
+      <End Role="Products" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Products__Catego__4BAC3F29" Association="Self.FK__Products__Catego__4BAC3F29">
+      <End Role="Categories" EntitySet="Categories" />
+      <End Role="Products" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Products__ModelI__4AB81AF0" Association="Self.FK__Products__ModelI__4AB81AF0">
+      <End Role="Models" EntitySet="Models" />
+      <End Role="Products" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Products__Photo3__48CFD27E" Association="Self.FK__Products__Photo3__48CFD27E">
+      <End Role="ProductTypes" EntitySet="ProductTypes" />
+      <End Role="Products" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Products__Suppli__4CA06362" Association="Self.FK__Products__Suppli__4CA06362">
+      <End Role="Suppliers" EntitySet="Suppliers" />
+      <End Role="Products" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ProductTy__Categ__412EB0B6" Association="Self.FK__ProductTy__Categ__412EB0B6">
+      <End Role="Categories" EntitySet="Categories" />
+      <End Role="ProductTypes" EntitySet="ProductTypes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Suppliers__UserI__2A4B4B5E" Association="Self.FK__Suppliers__UserI__2A4B4B5E">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Suppliers" EntitySet="Suppliers" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

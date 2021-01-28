@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6ee29beef6624066b86002950a8fe782" Name="Diagram1">
+        <EntityTypeShape EntityType="ProductInformationModel.Brands" Width="1.5" PointX="8.25" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProductInformationModel.Category" Width="1.5" PointX="8.25" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProductInformationModel.City" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProductInformationModel.Country" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProductInformationModel.CreditCart" Width="1.5" PointX="7.5" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProductInformationModel.Customer" Width="1.5" PointX="5.25" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProductInformationModel.Employee" Width="1.5" PointX="8.25" PointY="27.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProductInformationModel.Models" Width="1.5" PointX="8.25" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProductInformationModel.MyCart" Width="1.5" PointX="12.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProductInformationModel.Order" Width="1.5" PointX="10.5" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProductInformationModel.Product" Width="1.5" PointX="8.25" PointY="17.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProductInformationModel.ProductTypes" Width="1.5" PointX="6" PointY="17.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProductInformationModel.Shipper" Width="1.5" PointX="8.25" PointY="24" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProductInformationModel.Supplier" Width="1.5" PointX="6" PointY="20.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProductInformationModel.User" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="ProductInformationModel.FK__Models__BrandID__45F365D3" ManuallyRouted="false" />
+        <AssociationConnector Association="ProductInformationModel.FK__Orders__BrandID__571DF1D5" ManuallyRouted="false" />
+        <AssociationConnector Association="ProductInformationModel.FK__Products__BrandI__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="ProductInformationModel.FK__Orders__Category__5535A963" ManuallyRouted="false" />
+        <AssociationConnector Association="ProductInformationModel.FK__Products__Catego__4BAC3F29" ManuallyRouted="false" />
+        <AssociationConnector Association="ProductInformationModel.FK__ProductTy__Categ__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="ProductInformationModel.FK__City__CountryID__2F10007B" ManuallyRouted="false" />
+        <AssociationConnector Association="ProductInformationModel.FK__Customer__CityID__34C8D9D1" ManuallyRouted="false" />
+        <AssociationConnector Association="ProductInformationModel.FK__Orders__CityID__59FA5E80" ManuallyRouted="false" />
+        <AssociationConnector Association="ProductInformationModel.FK__Customer__Countr__33D4B598" ManuallyRouted="false" />
+        <AssociationConnector Association="ProductInformationModel.FK__Orders__CountryI__59063A47" ManuallyRouted="false" />
+        <AssociationConnector Association="ProductInformationModel.FK__CreditCar__Custo__38996AB5" ManuallyRouted="false" />
+        <AssociationConnector Association="ProductInformationModel.FK__Customer__Addres__32E0915F" ManuallyRouted="false" />
+        <AssociationConnector Association="ProductInformationModel.FK__Orders__Customer__52593CB8" ManuallyRouted="false" />
+        <AssociationConnector Association="ProductInformationModel.FK__Employees__Suppl__3C69FB99" ManuallyRouted="false" />
+        <AssociationConnector Association="ProductInformationModel.FK__Orders__ModelID__5812160E" ManuallyRouted="false" />
+        <AssociationConnector Association="ProductInformationModel.FK__Products__ModelI__4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="ProductInformationModel.FK__MyCarts__OrderID__5DCAEF64" ManuallyRouted="false" />
+        <AssociationConnector Association="ProductInformationModel.FK__MyCarts__OrderID__5FB337D6" ManuallyRouted="false" />
+        <AssociationConnector Association="ProductInformationModel.FK__MyCarts__UserID__5EBF139D" ManuallyRouted="false" />
+        <AssociationConnector Association="ProductInformationModel.FK__Orders__ProductI__5629CD9C" ManuallyRouted="false" />
+        <AssociationConnector Association="ProductInformationModel.FK__Orders__ShipperI__5AEE82B9" ManuallyRouted="false" />
+        <AssociationConnector Association="ProductInformationModel.FK__Orders__Supplier__534D60F1" ManuallyRouted="false" />
+        <AssociationConnector Association="ProductInformationModel.FK__Orders__TypeID__5441852A" ManuallyRouted="false" />
+        <AssociationConnector Association="ProductInformationModel.FK__Products__Produc__48CFD27E" ManuallyRouted="false" />
+        <AssociationConnector Association="ProductInformationModel.FK__Products__Suppli__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="ProductInformationModel.FK__Suppliers__UserI__2A4B4B5E" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
